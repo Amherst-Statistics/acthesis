@@ -31,9 +31,8 @@ acknowledgments: |
 bibliography: bib/thesis.bib
 csl: csl/apa.csl
 # Uncomment the following to include any additional LaTeX packages
-header-includes:
- - \usepackage{array}
- - \newcolumntype{h}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+# header-includes:
+# - \usepackage{latexPackageName}
 ---
 
 <!-----------------------------------------------------------------------------

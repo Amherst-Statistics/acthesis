@@ -260,8 +260,8 @@
     of \@institution \
     in partial fulfillment \\
     of the requirements for the degree of \\
-    \@degree \ with honors.\\
-
+    \@degree \
+    with honors.\\
     \vfil
     %\centerline{\hbox to \wd0 {\hbox{}\hrulefill\hbox{}}}
     %\bigskip
@@ -275,8 +275,6 @@
     	\if@altadvisor
     	\textit{\@altadvisor} \\
 		\fi
-
-
     \vfil
 
   \end{center}\par

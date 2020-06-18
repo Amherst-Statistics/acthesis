@@ -7,6 +7,7 @@ You can knit chapters all at once using the index file, or individually. When yo
 You can re-name each chapter file (e.g., change this filename from "01-chap1.Rmd" to "01-introduction.Rmd"), just make sure you also update the filename in the list of rmd files in _bookdown.yml.
 -->
 
+The introduction should provide an overview of the work you set out to do and provide structure for the remainder of the document.
 
 ## Resources for new(er) users {#resources}
 

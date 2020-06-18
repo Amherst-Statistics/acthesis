@@ -146,16 +146,16 @@ $if(highlighting-macros)$
   $highlighting-macros$
 $endif$
 
-% set baselinestretch = 1.5 to keep code double-spaced
+% Formatting R code: set baselinestretch = 1.5 for double-spacing
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{
-  baselinestretch=1.5,
+  baselinestretch = 1,
   commandchars=\\\{\}}
 
-% Formatting R output display
+% Formatting R output display: set baselinestretch = 1.5 for double-spacing
 \DefineVerbatimEnvironment{verbatim}{Verbatim}{
-  baselinestretch = 1.5,
+  baselinestretch = 1,
   % indent from left margin
-  xleftmargin=4mm,
+  xleftmargin = 1mm,
   % vertical grey bar on left side of R output
   frame = leftline,
   framesep = 0pt,

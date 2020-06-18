@@ -6,42 +6,7 @@ require(ggplot2)
 ```
 
 
-
 ## Tables
-
-Placeholder table below:
-
-
-\begin{center}
-\captionof{table}{\label{tab:mytable} Table caption goes here}
-\begin{tabular}{@{}rlc@{}}
-\toprule
- \multicolumn{3}{c}{Header across three columns}\\
- \midrule
-Right-justified column & Left-justified colum & Centered column\\
-\cmidrule{2-2}
-12345 & $\alpha \beta \gamma$ & text \\
- \bottomrule
-\end{tabular}
-\end{center}
-
-
-The placeholder table in Table \ref{tab:mytable} above will be replaced soon! Notice how the referencing format changes when we include references to LaTeX tables, too!
-
-
-
-
-But can I label this figure as a table?
-
-
-\begin{center}
-\captionof{table}{\label{tab:mypngtable} Caption for my png table}
-\includegraphics[width=5in]{figures/mypngtable.png}
-\end{center}
-
-
-Now I am referencing Table \ref{tab:mypngtable}, hopefully.
-
 
 In addition to the tables that can be automatically generated from a data frame in **R** that you saw in [R Markdown Basics] using the `kable` function, you can also create tables using _pandoc_. (More information is available at <http://pandoc.org/README.html#tables>.)  This might be useful if you don't have values specifically stored in **R**, but you'd like to display them in table form.  Below is an example.  Pay careful attention to the alignment in the table and hyphens to create the rows and columns.
 

@@ -1,4 +1,4 @@
 name:  Amherst Thesis
 description: >
  R Markdown template for thesis writers at Amherst College.
-
+create_dir: FALSE
