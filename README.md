@@ -61,9 +61,9 @@ If you have the internet connectivity, hard drive space, and know-how for managi
 
 3. Create a new R Markdown *from Template* and select *Amherst Thesis*. For now, name the primary .Rmd file `index` as shown below (you can change this later). This will create a new folder called *index* in whichever location you choose (you can rename the index folder after it is created--it has no effect on the ability to knit the thesis template). The thesis template files will be inside that folder (see figures below).
 
-    ![New R Markdown](newtemplate.png)
+    ![New R Markdown](userguide/figures/newtemplate.png)
     
-    ![New R Markdown](indexfolder.png)    
+    ![New R Markdown](userguide/figures/indexfolder.png)    
     
 
 4. As a test run, knit the `index.Rmd` file to PDF to make sure everything works! [Contact Prof. Bailey](mailto:bebailey@amherst.edu) if you are having trouble. The knitted pdf and corresponding tex file will be located in the newly created index folder: `index/_book/firstName-lastName_StatThesis.pdf`. There will also be a `_bookdown_files` directory that contains any cached items and generated figures. You can delete both the `_book` and `_bookdown_files` directories after this test run. 
