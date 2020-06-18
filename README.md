@@ -6,9 +6,8 @@ Currently, the PDF and gitbook versions are fully-functional.
 
 If you are new to working with `bookdown`/`rmarkdown`, please read over the documentation available in the `gitbook` template at https://thesisdown.netlify.com/.  This is also available below at http://ismayc.github.io/thesisdown_book.
 
-The current output for the two versions are here:
-- [PDF](https://github.com/Amherst-Statistics/thesisdown/blob/master/comps_example/_book/thesis.pdf) (Generating LaTeX file is available [here](https://github.com/Amherst-Statistics/thesisdown/blob/master/comps_example/_book/thesis.tex) with other files at in the [book directory](https://github.com/Amherst-Statistics/thesisdown/comps_example/_book).)
-- [gitbook](https://bebailey.github.io/comps_book/index.html)
+The current output for the pdf version is here:
+- [PDF Thesis Example](https://github.com/Amherst-Statistics/acthesis/blob/master/example-thesis/_book/firstName-lastName_StatThesis.pdf) 
 
 Under the hood, the Amherst College LaTeX template is used to ensure that documents conform precisely to [submission standards](https://www.amherst.edu/academiclife/registrar/for-students/thesis_guide). At the same time, composition and formatting can be done using lightweight [markdown](http://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](http://rmarkdown.rstudio.com).
 
