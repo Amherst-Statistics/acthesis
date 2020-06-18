@@ -1,0 +1,16 @@
+# Rename your knitted pdf file (found in _book folder after knitting)
+book_filename: "firstName-lastName_StatThesis"
+
+# Rename, re-order, add/delete these rmd files as appropriate
+# Do not include the abstract or acknowledgment files here;
+# they are automatically processed in the index.Rmd file
+rmd_files: ["index.Rmd",
+            "01-chap1.Rmd", "02-chap2.Rmd",
+            "03-chap3.Rmd", "04-chap4.Rmd",
+            "05-conclusion.Rmd",
+            "06-appendixA.Rmd", "07-appendixB.Rmd",
+            "98-corrections.Rmd",
+            "99-references.Rmd"]
+# Do not edit any of the following lines
+chapter_name: "Chapter"
+delete_merged_file: true

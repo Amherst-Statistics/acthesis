@@ -1,0 +1,218 @@
+# Jessica's tables
+\clearpage
+
+## Table 1
+\vspace{-1cm}
+
+\begin{center}
+\singlespacing
+\captionof{table}{\label{tab:mytable1} Caption for first table}
+\small
+\begin{tabular}{@{}p{0.8in}p{2.6in}p{2.6in}c@{}}
+\toprule
+& \begin{center}\vspace{-15pt}\textbf{Advantages}\vspace{-11pt}\end{center} & \begin{center}\vspace{-15pt}\textbf{Disadvantages}\vspace{-11pt}\end{center}\\ 
+\midrule
+\vspace{-11pt}\begin{center} \textbf{Method 0: Sample and Analyze} \end{center} &
+  \vspace{-11pt}\begin{itemize}
+\item Familiar functionalities remain accessible
+\item	Modeling and analysis run quickly due to working with small datasets
+\item Little to no complications
+\end{itemize}
+& 
+  \vspace{-11pt}\begin{itemize}
+\item Large volumes of data lost
+\item Frequent model discrepancies due to sampling variability
+\item For predictive modeling, low confidence expands margin of error for estimates 
+\end{itemize} \\
+\vspace{-11pt}\begin{center} \textbf{Method 1:\\ Use all data} \end{center} 
+& 
+ \vspace{-11pt} \begin{itemize}
+\item No data loss, so models have higher accuracy rates and narrower margins of error
+\end{itemize}
+&
+ \vspace{-11pt} \begin{itemize}
+\item Cannot store large datasets in R without running out of memory and/or breaking the workflow
+\end{itemize} \\
+\vspace{-11pt}\begin{center} \textbf{Method 2:\\ Chunk and Aggregate} \end{center} 
+& 
+  \vspace{-11pt}\begin{itemize}
+\item Fairly straightforward with certain processes
+\item Faster runtimes compared to Method 1 while maintaining consistent results (See Fig. 2.6)
+\item All R functionalities accessible
+\end{itemize}
+& 
+  \vspace{-11pt}\begin{itemize}
+\item Often, simple implementations to parallelize chunk results do not exist (i.e. classification tree (2.2))
+\item Still requires all data to be loaded in at some point
+\item Only minimally faster
+\end{itemize}\\
+\vspace{-11pt}\begin{center} \textbf{Method 3:\\ Use\\ Distributed\\ Computing} \end{center} 
+& 
+  \vspace{-11pt}\begin{itemize}
+\item Once learning curve is overcome, 
+\item Runtimes for jobs are extremely fast
+\item Prediction accuracy rates maintained with model fitting
+\end{itemize}
+& 
+  \vspace{-11pt}\begin{itemize}
+\item Steep learning curve and confusing documentation (Setup, Connection, Function usage)
+\item Limited visualization options
+\item Technical issues are common and recurring when working on clusters
+\end{itemize}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\clearpage
+
+## Tables 2  and 3 (or combined?)
+
+###  As in word document
+\begin{center}
+\singlespacing
+\captionof{table}{\label{tab:mytable2} Logistic regression model}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ & \textbf{1: Entire} & \textbf{2: Chunk and} & \textbf{3: Sparklyr}\\
+\textbf{Measure} & \textbf{Dataset} & \textbf{Aggregate} & \textbf{(HPGC)}\\
+\midrule
+Runtime & 1m 16s & 1m 5s & 8s \\
+Training Set Accuracy$^*$ & 	76.65\% & 	76.65\%  & 	76.71\% \\
+Test Set Accuracy$^\dagger$	& 83.87\%	& 83.86\%	& 83.93\% \\
+\bottomrule
+\multicolumn{4}{p{4.6in}}{{\footnotesize 
+
+$*$ Based on Bureau of Transportation Statistics (BTS) Airline Traffic Data in January 2017
+
+$\dagger$ Based on BTS Airline Traffic Data in February 2017}}
+\end{tabular}
+\end{center}
+
+\begin{center}
+\singlespacing
+\captionof{table}{\label{tab:mytable3} Classification tree model}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ & \textbf{1: Entire} & \textbf{2: Chunk and} & \textbf{3: Sparklyr}\\
+\textbf{Measure} & \textbf{Dataset} & \textbf{Aggregate} & \textbf{(HPGC)}\\
+\midrule
+Runtime &	8s &	-- & 12s \\
+Training Set Accuracy$^*$ &	76.82\%	&	-- & 76.73\%\\
+Test Set Accuracy$^\dagger$ &	83.52\%	& -- &	83.95\%\\
+\bottomrule
+\multicolumn{4}{p{4.6in}}{{\footnotesize 
+
+$*$ Based on Bureau of Transportation Statistics (BTS) Airline Traffic Data in January 2017
+
+$\dagger$ Based on BTS Airline Traffic Data in February 2017}}
+\end{tabular}
+\end{center}
+
+\clearpage
+
+### As recommended 
+Recommended update to tables on page 2: easier to compare down columns 
+
+\begin{center}
+\singlespacing
+\captionof{table}{\label{tab:mytable2update} Logistic Regression Model}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ &  & \textbf{Training Set} & \textbf{Test Set}\\
+\textbf{Method} & \textbf{Runtime} & \textbf{Accuracy$^*$} & \textbf{Accuracy$^\dagger$}\\
+\midrule
+1: Entire Dataset &	1m 16s	& 76.65\%	& 83.87\% \\
+2: Chunk and Aggregate &	1m 5s	& 76.65\%	& 83.86\% \\
+3: Sparklyr (HPGC) & 	8s	& 76.71\%	& 83.93\% \\
+\bottomrule
+\multicolumn{4}{p{4.6in}}{{\footnotesize 
+
+$*$ Based on Bureau of Transportation Statistics (BTS) Airline Traffic Data in January 2017
+
+$\dagger$ Based on BTS Airline Traffic Data in February 2017}}
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\singlespacing
+\captionof{table}{\label{tab:mytable3update} Classification Tree Model}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ &  & \textbf{Training Set} & \textbf{Test Set}\\
+\textbf{Method} & \textbf{Runtime} & \textbf{Accuracy$^*$} & \textbf{Accuracy$^\dagger$}\\
+\midrule
+1: Entire Dataset &	8s	& 76.82\%	& 83.52\% \\
+2: Chunk and Aggregate &	-- &	-- &	-- \\
+3: Sparklyr (HPGC) &	12s &	76.73\% &	83.95\% \\
+\bottomrule
+\multicolumn{4}{p{4.6in}}{{\footnotesize 
+
+$*$ Based on Bureau of Transportation Statistics (BTS) Airline Traffic Data in January 2017
+
+$\dagger$ Based on BTS Airline Traffic Data in February 2017}}
+\end{tabular}
+\end{center}
+
+\clearpage
+
+### As recommended if combined
+Recommended update to tables on page 2 if they are meant to be combined. 
+
+\begin{center}
+\singlespacing
+\captionof{table}{\label{tab:mytable2combined} Caption for combined table}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ &  & \textbf{Training Set} & \textbf{Test Set}\\
+\textbf{Method} & \textbf{Runtime} & \textbf{Accuracy$^*$} & \textbf{Accuracy$^\dagger$}\\
+\midrule
+\textbf{Logistic Regression Model} & & &\\
+\hspace*{4mm}1: Entire Dataset &	1m 16s	& 76.65\%	& 83.87\% \\
+\hspace*{4mm}2: Chunk and Aggregate &	1m 5s	& 76.65\%	& 83.86\% \\
+\hspace*{4mm}3: Sparklyr (HPGC) & 	8s	& 76.71\%	& 83.93\% \\\\
+\textbf{Classification Tree Model} & & &\\
+\hspace*{4mm}1: Entire Dataset &	8s	& 76.82\%	& 83.52\% \\
+\hspace*{4mm}2: Chunk and Aggregate &	-- &	-- &	-- \\
+\hspace*{4mm}3: Sparklyr (HPGC) &	12s &	76.73\% &	83.95\% \\
+\bottomrule
+\multicolumn{4}{p{4.6in}}{{\footnotesize 
+
+$*$ Based on Bureau of Transportation Statistics (BTS) Airline Traffic Data in January 2017
+
+$\dagger$ Based on BTS Airline Traffic Data in February 2017}}
+\end{tabular}
+\end{center}
+
+\clearpage
+
+
+## Table 4
+
+\begin{center}
+\singlespacing
+\captionof{table}{\label{tab:mytable4} Caption for third table}
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+ & \multicolumn{2}{c}{\textbf{Predicted Probability of Delay (Std. error)}}\\
+\textbf{Method} & \textbf{6 AM Flight} & \textbf{6 PM Flight}\\
+\midrule
+0: Sample and Analyze$^*$ & &\\
+  \hspace*{8mm}\textit{Sample 1}	& 18.6\%  (0.0129) &	30.7\%  (0.0178) \\
+	\hspace*{8mm}\textit{Sample 2}	& 17.9\%  (0.0129) &	30.4\%  (0.0183)\\
+1: Use Entire Dataset	& 17.5\%  (0.0060)	& 29.6\%  (0.0086)\\
+2: Chunk and Aggregate &	17.5\%  (0.0084)	& 29.1\%  (0.0122)\\
+3: Use Distributed Computing &	18.5\%   (---) & 	30.9\%   (---)\\
+\bottomrule
+\multicolumn{3}{p{4.6in}}{{\footnotesize 
+$*$ Results are pulled from sample example in Chapter 1
+
+--- Sparklyr predictions did not return standard error for fitted probability}}
+\end{tabular}
+\end{center}

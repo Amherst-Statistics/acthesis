@@ -1,0 +1,34 @@
+<!--
+This content below must go last in the thesis document according to how R Markdown renders.  More info is at http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+-->
+
+<!--
+\backmatter indicates that the next (and final) chapter is the references
+-->
+\backmatter
+
+<!-- 
+You can change the name of the References chapter, but make sure to leave the {-} option to keep the chapter un-numbered.
+-->
+# References {-}
+
+<!--
+\noindent removes the indentation of the first entry.
+-->
+\noindent
+
+<!--
+The \setlength lines below create a hanging indent and spacing between entries.  These three lines may need to be removed for styles that don't require the hanging indent.
+-->
+\setlength{\parindent}{-0.20in}
+\setlength{\leftskip}{0.20in}
+\setlength{\parskip}{8pt}
+
+
+<!--
+This is just for testing with more citations for the bibliography at the end.  Add other entries into the list here if you'd like them to appear in the bibliography even if they weren't explicitly cited in the document.
+-->
+---
+nocite: | 
+  @angel2000, @angel2001, @angel2002a
+...

@@ -1,0 +1,27 @@
+# Introduction {#intro}
+<!--
+Each chapter file must start with a chapter header (e.g., # Chapter name). Notice we have also included a label after the chapter name ({# intro}) so we can refer back to this chapter later in the text if want to (e.g., by using \@ref(intro)). This also helps you debut potential issues as you knit.
+
+You can knit chapters all at once using the index file, or individually. When you knit a single chapter, every other chapter will have a one-sentence placeholder to make knitting easier.
+
+You can re-name each chapter file (e.g., change this filename from "01-chap1.Rmd" to "01-introduction.Rmd"), just make sure you also update the filename in the list of rmd files in _bookdown.yml.
+-->
+
+The introduction should provide an overview of the work you set out to do and provide structure for the remainder of the document.
+
+## Resources for new(er) users {#resources}
+
+If you are new to bookdown, the package this thesis template is built on, I highly recommend bookmarking Chapter 2 of Yihui Xie's book, ["bookdown: Authoring Books and Technical Documents with R Markdown"](https://bookdown.org/yihui/bookdown/markdown-syntax.html) as a reference for **R** and LaTeX components useful to writing your thesis, including 
+
+* _R Markdown_ syntax
+* math expressions
+* numbering and referencing equations
+* special chunks for *theorems*, *definitions*, *proofs*, etc.
+* captioning and referencing figures
+* captioning and referencing tables
+* in-text citations and bibliographies
+
+
+### What to expect
+
+While Yihui Xie's books is the best resource, the remainder of this document will include examples of commonly used formatting. The amherst thesis github repo also contains a guide on dealing with all the different files in this thesis directory.

@@ -1,0 +1,24 @@
+Package: acthesis
+Title: Templates for thesis writers at Amherst College
+Version: 0.0.1
+Authors@R: c(
+    person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
+    person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
+    person("Brittney", "Bailey", email = "bebailey@amherst.edu", role = c("cre", "aut")))
+Description: Using the bookdown package and LaTeX thesis templates from
+    Amherst College, this package aims to encourage reproducible research using
+    simple Markdown syntax while embedding all of the R code to produce plots
+    and analyses as well. This package has been modified for use at Amherst College.
+Maintainer: Brittney E. Bailey <bebailey@amherst.edu>
+Depends:
+    R (>= 3.2.0),
+    remotes,
+    dplyr,
+    ggplot2,
+    bookdown,
+    knitr
+License: MIT
+Encoding: UTF-8
+LazyData: true
+SystemRequirements: pandoc (>= 1.18) - http://pandoc.org
+RoxygenNote: 7.0.2

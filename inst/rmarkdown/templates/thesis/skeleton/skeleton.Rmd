@@ -1,0 +1,119 @@
+---
+title: 'My amazing  title'
+author: 'Your R. Name'
+date: 'April DD, 20YY'
+institution: 'Amherst College'
+advisor: 'Advisor F. Name'
+# Delete altadvisor line if you only have one advisor
+altadvisor: 'Your Other Advisor'
+# Change department to'Special Programs' if interdisciplinary thesis
+department: 'Mathematics and Statistics'
+degree: 'Bachelor of Arts'
+knit: "bookdown::render_book"
+output: 
+  acthesis::thesis_pdf: default
+# include table of contents, list of tables, list of figures
+toc: true
+lot: true # set to false if no tables present
+lof: true # set to false if no figures present
+fig_height: 3.5
+fig_width: 5.5
+# Update abstract and acknowledgments filenames below as needed
+abstract: |
+  `r if(knitr:::is_latex_output()) 
+    paste(readLines("00a-abstract.Rmd"),
+    collapse = '\n  ')`
+acknowledgments: |
+  `r if(knitr:::is_latex_output()) 
+    paste(readLines("00b-acknowledgments.Rmd"), 
+    collapse = '\n  ')`
+# Update the .bib filename below as needed
+bibliography: bib/thesis.bib
+csl: csl/apa.csl
+# Uncomment the following to include any additional LaTeX packages
+# header-includes:
+# - \usepackage{latexPackageName}
+---
+
+<!-----------------------------------------------------------------------------
+IMPORTANT REMINDERS!!
+
+(1) Before you knit the document, make sure to update your _bookdown.yml file with:
+    - your knitted pdf name (book_filename: "FirstName-LastName_StatThesis")
+    - your filenames in order (rmd_files: ["thisfilename.Rmd", "firstChapter.Rmd", ..., "99-references.Rmd"])
+
+(2) You can rename any of the chapter files, including this index file, as long as you update the filenames in _bookdown.yml
+
+(3) Knit this file to knit the entire thesis document, or knit within a single chapter file to only knit that chapter (all other chapters will be knit with just a placeholder sentence). You will likely run into issues when knitting a single chapter if that chapter depends on code from previous chapters.  
+
+(4) No thesis code or text should go in this index file except that used to set up the remainder of the document.
+------------------------------------------------------------------------------->
+
+
+<!--
+The acthesis package does not need to be loaded for your thesis (but DOES need to be installed on your machine). It's loaded here as a quick way to load the packages needed to knit this example document. 
+
+You can delete the following code chunk from your final document if you wish.
+-->
+```{r include_acthesis, include = FALSE}
+# acthesis package loads dpylr, ggplot2, knitr, bookdown, and remotes
+require(acthesis)
+```
+
+
+<!--
+R has some built-in options that may be useful. Some recommended values are set below. Feel free to play around with the options You may edit or delete this code chunk if you wish.
+
+- width: max width of R output (default: based on console width)
+- digits: number of significant digits to print (default: 7)
+-->
+```{r set_options, include = FALSE}
+# Default width of R ouput
+options(width = 65, digits = 3)
+```
+
+
+<!--
+This is a clunky workaround to wrap super long R output. This code chunk defines a new code chunk option called linewidth that allows you to wrap R output that falls into the margins or off the page.
+
+The default linewidth for R output in the thesis template is 65, set with options(width = 65). If the linewidth option is still needed for a specific code chunk despite this setting, we recommend using linewidth = 65 for consistency.
+-->
+```{r wrap-hook, include = FALSE}
+# Define a new code chunk option 'linewidth' for wrapping unruly R output
+hook_output = knitr::knit_hooks$get('output')
+knitr::knit_hooks$set(output = function(x, options) {
+  # this hook is used only when the linewidth option is not NULL
+  if (!is.null(n <- options$linewidth)) {
+    x = knitr:::split_lines(x)
+    # any lines wider than n should be wrapped
+    if (any(nchar(x) > n)) x = strwrap(x, width = n, exdent = 3, indent = 3)
+    x = paste(x, collapse = '\n')
+  }
+  hook_output(x, options)
+})
+# Note: set linewidth = 65 when needed.
+```
+
+
+<!--
+The following code downloads the latest Amherst thesis cover sheet if it doesn't already exist in your folder. You may delete this code if you wish.
+
+Amherst Thesis Guidelines are provided at https://www.amherst.edu/academiclife/registrar/for-students/thesis_guide
+-->
+```{r get_coversheet, include = FALSE}
+# download latest thesis cover sheet
+if(!file.exists("CoverSheet.pdf")){
+  download.file("https://www.amherst.edu/system/files/media/Thesis%2520Copyright.pdf", "CoverSheet.pdf")
+}
+```
+
+
+
+<!-- 
+If knitting to HTML, the following code is required to number equations in HTML files. You may delete the following code from your final document if you wish, but it should not affect your work.
+-->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>

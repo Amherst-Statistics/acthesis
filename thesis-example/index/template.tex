@@ -1,0 +1,271 @@
+%===========================================================
+% This is the thesis template for the Statistics major at
+% Amherst College. Brittney E. Bailey (bebailey@amherst.edu)
+% adapted this template from the Reed College LaTeX thesis
+% template in January 2019 with major updates in April 2020.
+% Please send any comments/suggestions: bebailey@amherst.edu
+
+% Most of the work for the original document class was done
+% by Sam Noble (SN), as well as this template. Later comments
+% etc. by Ben Salzberg (BTS). Additional restructuring and
+% APA support by Jess Youngberg (JY). Email: cus@reed.edu
+%===========================================================
+
+\documentclass[12pt, twoside]{amherstthesis}
+\usepackage{graphicx,latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}
+\usepackage{longtable,booktabs} %setspace loaded in .cls
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{float}
+\floatplacement{figure}{H}
+\usepackage{rotating}
+\usepackage{fancyvrb}
+% User-added packages:
+$for(header-includes)$
+	$header-includes$
+$endfor$
+% End user-added packages
+
+%===========================================================
+% BIBLIOGRAPHY FORMATTING
+
+% Next line commented out by CII
+%%% \usepackage{natbib}
+% Comment out the natbib line above and uncomment the
+% following two lines to use the new biblatex-chicago style,
+% for Chicago A. Also make some changes at the end where the
+% bibliography is included.
+%\usepackage{biblatex-chicago}
+%\bibliography{thesis}
+
+
+%===========================================================
+% HYPERLINK FORMATTING
+
+% Added by CII (Thanks, Hadley!)
+% Use ref for internal links
+\renewcommand{\hyperref}[2][???]{\autoref{#1}}
+\def\chapterautorefname{Chapter}
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Subsection}
+% End of CII addition
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+%===========================================================
+% CAPTION FORMATTING
+
+% Added by CII
+\usepackage{caption}
+\captionsetup{width=5in}
+% End of CII addition
+
+%===========================================================
+% TITLE FORMATTING
+
+\renewcommand{\contentsname}{Table of Contents}
+
+\usepackage{titlesec}
+%%%%%%%%
+% How to use titlesec:
+% \titleformat{⟨command⟩}[⟨shape⟩]{⟨format⟩}{⟨label⟩}{⟨sep⟩}
+%  {⟨before-code⟩}[⟨after-code⟩]
+%%%%%%%%
+
+\titleformat{\chapter}[hang]
+{\normalfont%
+    \Large% %change this size to your needs for the first line
+    \bfseries}{\chaptertitlename\ \thechapter}{1em}{%
+      %change this size to your needs for the second line
+    }[]
+
+\titleformat{\section}[hang]
+{\normalfont%
+    \large % %change this size to your needs for the first line
+    \bfseries}{\thesection}{1em}{%
+     %change this size to your needs for the second line
+    }[]
+
+\titleformat{\subsection}[hang]
+{\normalfont%
+    \normalsize % %change this size to your needs for the first line
+    \bfseries}{\thesubsection}{1em}{%
+     %change this size to your needs for the second line
+    }[]
+
+% \titleformat{\section}[display]
+% {\normalfont%
+%     \large% %change this size to your needs for the first line
+%     \bfseries}{\chaptertitlename\ \thechapter}{20pt}{%
+%     \normalsize %change this size to your needs for the second line
+%     }
+
+
+%===========================================================
+% DOCUMENT FONT
+
+% \usepackage{times}
+% other fonts available eg: times, bookman, charter, palatino
+
+
+%===========================================================
+% PASSING FORMATS FROM RMD --> LATEX
+
+%%%%%%%%
+% NOTE: Dollar signs pass parameters between YAML inputs
+% in index.Rmd and LaTeX
+%%%%%%%%
+
+\Abstract{
+$abstract$
+}
+
+\Acknowledgments{
+$acknowledgments$
+}
+
+\Dedication{
+$dedication$
+}
+
+\Preface{
+$preface$
+}
+
+% Formatting R code display
+% Syntax highlighting #22
+$if(highlighting-macros)$
+  $highlighting-macros$
+$endif$
+
+% set baselinestretch = 1.5 to keep code double-spaced
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  baselinestretch=1.5,
+  commandchars=\\\{\}}
+
+% Formatting R output display
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{
+  baselinestretch = 1.5,
+  % indent from left margin
+  xleftmargin=4mm,
+  % vertical grey bar on left side of R output
+  frame = leftline,
+  framesep = 0pt,
+  framerule = 1.5mm, rulecolor = \color{black!15}
+  }
+
+\title{$title$}
+\author{$author$}
+\date{$date$}
+\division{$division$}
+\advisor{$advisor$}
+% for second advisor
+$if(altadvisor)$
+\altadvisor{$altadvisor$}
+$endif$
+\institution{$institution$}
+\degree{$degree$}
+\department{$department$}
+
+% Added by CII
+%%% Copied from knitr
+%% maxwidth is the original width if it's less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+% ===========================================
+% DOCUMENT SPACING
+
+\setlength{\parskip}{0pt}
+% Added by CII
+$if(space_between_paragraphs)$
+  %\setlength{\parskip}{\baselineskip}
+  \usepackage[parfill]{parskip}
+$endif$
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+% ===========================================
+% ===========================================
+% ===========================================
+\begin{document}
+
+\doublespace
+% Everything below added by CII
+$if(title)$
+  \maketitle
+$endif$
+
+\frontmatter % this stuff will be roman-numbered
+\pagenumbering{roman}
+\pagestyle{fancyplain}
+%\pagestyle{fancy} % this removes page numbers from the frontmatter
+
+
+$if(abstract)$
+  \begin{abstract}
+    $abstract$
+  \end{abstract}
+$endif$
+
+$if(dedication)$
+  \begin{dedication}
+    $dedication$
+  \end{dedication}
+$endif$
+
+$if(acknowledgments)$
+  \begin{acknowledgments}
+    $acknowledgments$
+  \end{acknowledgments}
+$endif$
+
+$if(preface)$
+  \begin{preface}
+    $preface$
+  \end{preface}
+$endif$
+
+$if(toc)$
+  \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+  \setcounter{tocdepth}{$toc-depth$}
+  \tableofcontents
+$endif$
+
+$if(lot)$
+  \addcontentsline{toc}{chapter}{List of Tables}\listoftables
+$endif$
+
+$if(lof)$
+  \addcontentsline{toc}{chapter}{List of Figures}\listoffigures
+$endif$
+
+
+\mainmatter % here the regular arabic numbering starts
+\pagenumbering{arabic}
+\pagestyle{fancyplain} % turns page numbering back on
+
+$body$
+
+% Index?
+
+\end{document}
+
