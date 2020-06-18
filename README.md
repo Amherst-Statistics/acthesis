@@ -4,7 +4,7 @@ This project was inspired by the [bookdown](http://github.com/rstudio/bookdown) 
 
 Currently, the PDF and gitbook versions are fully-functional.  
 
-If you are new to working with `bookdown`/`rmarkdown`, please read over the documentation available in the [`gitbook` template]https://thesisdown.netlify.com/.  This is also available below at http://ismayc.github.io/thesisdown_book.
+If you are new to working with `bookdown`/`rmarkdown`, you can read over the documentation available in the [`gitbook` template](https://thesisdown.netlify.com/)  or at [Chester Ismay's site](http://ismayc.github.io/thesisdown_book).
 
 See the [PDF Thesis Example](https://github.com/Amherst-Statistics/acthesis/blob/master/example-thesis/_book/firstName-lastName_StatThesis.pdf) and read the [acthesis user guide](https://github.com/Amherst-Statistics/acthesis/blob/master/userguide/acthesis_user-guide.pdf) for guidance.
 
@@ -12,83 +12,62 @@ Under the hood, the Amherst College LaTeX template is used to ensure that docume
 
 ### Using acstats-thesis from Amherst-Statistics GitHub
 
+
+Using **acthesis** has requires installing LaTeX on your computer and the `acthesis` package in R.
+
 #### Installing LaTeX
 
-Using **acthesis** has some prerequisites which are described below. To compile PDF documents using **R**, you need to have LaTeX installed.  It can be downloaded for Windows at <http://http://miktex.org/download> and for Mac at <http://tug.org/mactex/mactex-download.html>.  Follow the instructions to install the necessary packages after downloading the (somewhat large) installer files.  
+To knit the document to PDF, you need to have LaTeX installed. We outline two options below for installing LaTeX on your machine: using the **tinytex** package in **R** (small, quick download but requires individual installation of LaTeX packages), or installing the full LaTeX download for Windows or Mac (large download: about 5 GB).
 
-By far the easiest way to install LaTeX on any platform is with the [tinytex](https://yihui.name/tinytex/) R package:
+## Small LaTeX install via **tinytex**
+By far the easiest way to install LaTeX on any platform is with the [**tinytex**](https://yihui.name/tinytex/) package in **R**. 
 
-```{r}
-install.packages(c('tinytex', 'rmarkdown'))
+Run the following in your **R** console:
+```{r, eval = FALSE}
+install.packages('tinytex')
 tinytex::install_tinytex()
 # after restarting RStudio, confirm that you have LaTeX with 
 tinytex:::is_tinytex() 
 ```
 
-You may need to install a few extra LaTeX packages on your first attempt to knit as well. Here is one such example of how to do so:
-
-```{r}
-tinytex::tlmgr_install("babel-portuges")
+While required LaTeX packages *should* download automatically, you may need to install LaTeX packages or style files manually. You can do this using the `tlmgr_install` function, for example:
+```{r, eval = FALSE}
+# install the booktabs latex package
+tinytex::tlmgr_install('booktabs')
 ```
 
-#### Getting the markdown template
-To use **acthesis** from RStudio:
 
-1. Ensure that you have already installed LaTeX and the fonts described above, and are using the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/).
+## Full LaTeX install
+If you have the internet connectivity, hard drive space, and know-how for managing a full LaTeX install, you can download LaTeX using one of the following:
 
-2. Install the **bookdown** and **acthesis** packages (if you are on the server, do **NOT** update any of the packages if it prompts you to--hit Enter or choose the `3: None` to avoid the package updates): 
+* For any operating system: [TeX Live](https://www.tug.org/texlive/)
+* For Mac: [MacTeX](http://tug.org/mactex/mactex-download.html) 
+* For Windows: [MiKTeX](http://http://miktex.org/download)
+    - For full download, go to the 'All downloads' tab and download the Net Installer
+    - If you download the basic install instead, you may need to download individual LaTeX packages as needed (as described above)
+    
 
+#### Installing **acthesis** in RStudio
+
+1. Ensure that you have already installed LaTeX and are using the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/).
+
+2. Install the **remotes**, **bookdown**, and **acthesis** packages (if you are on the server, do **NOT** update any of the packages if it prompts you to. Instead, hit 'Enter' or choose the `3: None` option to avoid the package updates): 
+
+```{r, eval = FALSE}
+    if(!require("remotes")) install.packages("remotes", repos = "http://cran.rstudio.org")
+    if(!require("bookdown")) install.packages("bookdown", repos = "http://cran.rstudio.org")
+    remotes::install_github("Amherst-Statistics/acthesis")
 ```
-if (!require("remotes")) install.packages("remotes", repos = "http://cran.rstudio.org")
-if (!require("remotes")) install.packages("remotes", repos = "http://cran.rstudio.org")
-remotes::install_github("Amherst-Statistics/acthesis")
-```
 
-3. Use the **New R Markdown** dialog to select **Amherst Thesis** (note that this will currently only **Knit** if you name the primary .Rmd file `index` as shown below):
+3. Create a new R Markdown *from Template* and select *Amherst Thesis*. For now, name the primary .Rmd file `index` as shown below (you can change this later). This will create a new folder called *index* in whichever location you choose (you can rename the index folder after it is created--it has no effect on the ability to knit the thesis template). The thesis template files will be inside that folder (see figures below).
 
     ![New R Markdown](newtemplate.png)
     
-4. After choosing which type of output you'd like in the YAML at the top of index.Rmd, **Knit** the `index.Rmd` file to get the book in PDF or HTML formats.
+    ![New R Markdown](indexfolder.png)    
+    
 
-5. Edit the individual chapter R Markdown files as you wish and then re-run step (4) again.
+4. As a test run, knit the `index.Rmd` file to PDF to make sure everything works! [Contact Prof. Bailey](mailto:bebailey@amherst.edu) if you are having trouble. The knitted pdf and corresponding tex file will be located in the newly created index folder: `index/_book/firstName-lastName_StatThesis.pdf`. There will also be a `_bookdown_files` directory that contains any cached items and generated figures. You can delete both the `_book` and `_bookdown_files` directories after this test run. 
+
+5. Read through the [User Guide](https://github.com/Amherst-Statistics/acthesis/blob/master/userguide/acthesis_user-guide.pdf) to see how to set up the thesis template for your use and how to work with it day-to-day
 
 
-### Day-to-day writing of your thesis 
-
-You need to edit the individual chapter R Markdown files to write your thesis. It's recommended that you version control your thesis using GitHub if possible. RStudio can also easily sync up with GitHub to make the process easier. While writing, you should `git commit` your work frequently, after every major activity on your thesis. For example, every few paragraphs or section of text, and after major step of analysis development. You should `git push` at the end of each work session before you leave your computer or change tasks. For a gentle, novice-friendly guide to getting starting with using Git with R and RStudio, see <http://happygitwithr.com/>.
-
-## Rendering
-
-To render your thesis into a PDF, open `index.Rmd` in RStudio and then click the "knit" button. To change the output formats between PDF, gitbook and Word , look at the `output:` field in `index.Rmd` and comment-out the formats you don't want.
-
-The PDF file of your thesis will be deposited in the `_book/` directory, by default.
-
-## Components
-
-The following components are ones you should edit to customize your thesis:
-
-### `_bookdown.yml`
-
-This is the main configuration file for your thesis. It determines what Rmd files are included in the output, and in what order. Arrange the order of your chapters in this file and ensure that the names match the names in your folders. 
-
-### `index.Rmd`
-
-This file contains all the meta information that goes at the beginning of your
-document. You'll need to edit this to put your name on the first page, the title of your thesis, etc.
-
-### `01-chap1.Rmd`, `02-chap2.Rmd`, etc.
-
-These are the Rmd files for each chapter in your dissertation. Write your thesis in these. If you're writing in RStudio, you may find the [wordcount addin](https://github.com/benmarwick/wordcountaddin) useful for getting word counts and readability statistics in R Markdown documents.
-
-### `bib/`
-
-Store your bibliography (as bibtex files) here. We recommend using the [citr addin](https://github.com/crsh/citr) and [Zotero](https://www.zotero.org/) to efficiently manage and insert citations. 
-
-### `csl/`
-
-Specific style files for bibliographies should be stored here. A good source for
-citation styles is https://github.com/citation-style-language/styles#readme
-
-### `figure/` and `data/`
-
-Store your figures and data here and reference them in your R Markdown files. See the [bookdown book](https://bookdown.org/yihui/bookdown/) for details on cross-referencing items using R Markdown.
