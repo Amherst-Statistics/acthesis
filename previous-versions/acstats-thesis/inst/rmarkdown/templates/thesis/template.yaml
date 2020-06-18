@@ -1,0 +1,4 @@
+name:  AC Stat Comps/Thesis
+description: >
+ Template for creating a Comprehensive Evaluation report or senior thesis for Statistics majors at Amherst College. The template uses R Markdown based on the Reed College LaTeX template and the R bookdown package.
+
