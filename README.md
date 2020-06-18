@@ -1,13 +1,12 @@
 # acthesis
 
-This project was inspired by the [bookdown](http://github.com/rstudio/bookdown) package and is an updated version of Chester Ismay's Senior Thesis template in the `reedtemplates` package [here](http://github.com/ismayc/reedtemplates). 
+This project was inspired by the [bookdown](http://github.com/rstudio/bookdown) package and is an updated version of Chester Ismay's Senior Thesis template in the [`reedtemplates` package](http://github.com/ismayc/reedtemplates). 
 
 Currently, the PDF and gitbook versions are fully-functional.  
 
-If you are new to working with `bookdown`/`rmarkdown`, please read over the documentation available in the `gitbook` template at https://thesisdown.netlify.com/.  This is also available below at http://ismayc.github.io/thesisdown_book.
+If you are new to working with `bookdown`/`rmarkdown`, please read over the documentation available in the [`gitbook` template]https://thesisdown.netlify.com/.  This is also available below at http://ismayc.github.io/thesisdown_book.
 
-The current output for the pdf version is here:
-- [PDF Thesis Example](https://github.com/Amherst-Statistics/acthesis/blob/master/example-thesis/_book/firstName-lastName_StatThesis.pdf) 
+See the [PDF Thesis Example](https://github.com/Amherst-Statistics/acthesis/blob/master/example-thesis/_book/firstName-lastName_StatThesis.pdf) and read the [acthesis user guide](https://github.com/Amherst-Statistics/acthesis/blob/master/userguide/acthesis_user-guide.pdf) for guidance.
 
 Under the hood, the Amherst College LaTeX template is used to ensure that documents conform precisely to [submission standards](https://www.amherst.edu/academiclife/registrar/for-students/thesis_guide). At the same time, composition and formatting can be done using lightweight [markdown](http://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](http://rmarkdown.rstudio.com).
 
