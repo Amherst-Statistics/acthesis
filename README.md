@@ -1,25 +1,15 @@
-# acthesis
-
-This project was inspired by the [bookdown](http://github.com/rstudio/bookdown) package and is an updated version of Chester Ismay's Senior Thesis template in the [`reedtemplates` package](http://github.com/ismayc/reedtemplates). 
-
-Currently, the PDF and gitbook versions are fully-functional.  
-
-If you are new to working with `bookdown`/`rmarkdown`, you can read over the documentation available in the [`gitbook` template](https://thesisdown.netlify.com/)  or at [Chester Ismay's site](http://ismayc.github.io/thesisdown_book).
-
-See the [PDF Thesis Example](https://github.com/Amherst-Statistics/acthesis/blob/master/example-thesis/_book/firstName-lastName_StatThesis.pdf) and read the [acthesis user guide](https://github.com/Amherst-Statistics/acthesis/blob/master/userguide/acthesis_user-guide.pdf) for guidance.
-
-Under the hood, the Amherst College LaTeX template is used to ensure that documents conform precisely to [submission standards](https://www.amherst.edu/academiclife/registrar/for-students/thesis_guide). At the same time, composition and formatting can be done using lightweight [markdown](http://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](http://rmarkdown.rstudio.com).
-
-### Using acstats-thesis from Amherst-Statistics GitHub
+# acthesis package
 
 
-Using **acthesis** has requires installing LaTeX on your computer and the `acthesis` package in R.
+## Using ac-thesis from Amherst-Statistics GitHub
 
-#### Installing LaTeX
+Using **acthesis** has requires installing LaTeX on your computer and installing the `acthesis` package in R.
+
+### Installing LaTeX
 
 To knit the document to PDF, you need to have LaTeX installed. We outline two options below for installing LaTeX on your machine: using the **tinytex** package in **R** (small, quick download but requires individual installation of LaTeX packages), or installing the full LaTeX download for Windows or Mac (large download: about 5 GB).
 
-## Small LaTeX install via **tinytex**
+#### Small LaTeX install via **tinytex**
 By far the easiest way to install LaTeX on any platform is with the [**tinytex**](https://yihui.name/tinytex/) package in **R**. 
 
 Run the following in your **R** console:
@@ -37,7 +27,7 @@ tinytex::tlmgr_install('booktabs')
 ```
 
 
-## Full LaTeX install
+#### Full LaTeX install
 If you have the internet connectivity, hard drive space, and know-how for managing a full LaTeX install, you can download LaTeX using one of the following:
 
 * For any operating system: [TeX Live](https://www.tug.org/texlive/)
@@ -47,7 +37,7 @@ If you have the internet connectivity, hard drive space, and know-how for managi
     - If you download the basic install instead, you may need to download individual LaTeX packages as needed (as described above)
     
 
-#### Installing **acthesis** in RStudio
+### Installing **acthesis** in RStudio
 
 1. Ensure that you have already installed LaTeX and are using the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/).
 
@@ -70,4 +60,14 @@ If you have the internet connectivity, hard drive space, and know-how for managi
 
 5. Read through the [User Guide](https://github.com/Amherst-Statistics/acthesis/blob/master/userguide/acthesis_user-guide.pdf) to see how to set up the thesis template for your use and how to work with it day-to-day
 
+## Additional information
 
+This project was inspired by the [bookdown](http://github.com/rstudio/bookdown) package and is an updated version of Chester Ismay's Senior Thesis template in the [`reedtemplates` package](http://github.com/ismayc/reedtemplates). 
+
+Currently, the PDF and gitbook versions are fully-functional.  
+
+If you are new to working with `bookdown`/`rmarkdown`, you can read over the documentation available in the [`gitbook` template](https://thesisdown.netlify.com/)  or at [Chester Ismay's site](http://ismayc.github.io/thesisdown_book).
+
+See the [PDF Thesis Example](https://github.com/Amherst-Statistics/acthesis/blob/master/example-thesis/_book/firstName-lastName_StatThesis.pdf) and read the [acthesis user guide](https://github.com/Amherst-Statistics/acthesis/blob/master/userguide/acthesis_user-guide.pdf) for guidance.
+
+Under the hood, the Amherst College LaTeX template is used to ensure that documents conform precisely to [submission standards](https://www.amherst.edu/academiclife/registrar/for-students/thesis_guide). At the same time, composition and formatting can be done using lightweight [markdown](http://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](http://rmarkdown.rstudio.com).
