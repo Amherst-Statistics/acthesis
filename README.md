@@ -49,7 +49,7 @@ If you have the internet connectivity, hard drive space, and know-how for managi
     remotes::install_github("Amherst-Statistics/acthesis")
 ```
 
-3. Create a new R Markdown *from Template* and select *Amherst Thesis*. For now, name the primary .Rmd file `index` as shown below (you can change this later). This will create a new folder called *index* in whichever location you choose (you can rename the index folder after it is created--it has no effect on the ability to knit the thesis template). The thesis template files will be inside that folder (see figures below).
+3. Create a new R Markdown *from Template* and select *Amherst Thesis* (you may need to restart RStudio to get it to show up). For now, name the primary .Rmd file `index` as shown below (you can change this later). This will create a new folder called *index* in whichever location you choose (you can rename the index folder after it is created--it has no effect on the ability to knit the thesis template). The thesis template files will be inside that folder (see figures below).
 
     ![New R Markdown](userguide/figures/newtemplate.png)
     
