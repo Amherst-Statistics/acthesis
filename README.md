@@ -39,7 +39,7 @@ If you have the internet connectivity, hard drive space, and know-how for managi
 
 ### Installing **acthesis** in RStudio
 
-1. Ensure that you have already installed LaTeX and are using the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/).
+1. Ensure that you have already installed LaTeX and are using the latest version of [R](https://cran.r-project.org) and [RStudio](http://www.rstudio.com/products/rstudio/download/).
 
 2. Install the **remotes**, **bookdown**, and **acthesis** packages (if you are on the server, do **NOT** update any of the packages if it prompts you to. Instead, hit 'Enter' or choose the `3: None` option to avoid the package updates): 
 
