@@ -175,6 +175,17 @@ $endif$
 \degree{$degree$}
 \department{$department$}
 
+% Fix from pandoc about cslreferences?
+% https://github.com/mpark/wg21/issues/54
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
+  {\par}
+$endif$
+
 % Added by CII
 %%% Copied from knitr
 %% maxwidth is the original width if it's less than linewidth
