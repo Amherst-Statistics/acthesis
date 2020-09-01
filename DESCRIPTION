@@ -1,6 +1,6 @@
 Package: acthesis
 Title: Templates for thesis writers at Amherst College
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
