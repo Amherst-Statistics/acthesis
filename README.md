@@ -3,7 +3,7 @@
 
 ## Using ac-thesis from Amherst-Statistics GitHub
 
-Using **acthesis** has requires installing LaTeX on your computer and installing the `acthesis` package in R.
+Using **acthesis** requires installing LaTeX on your computer and installing the `acthesis` package in R.
 
 ### Installing LaTeX
 
